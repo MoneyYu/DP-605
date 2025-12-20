@@ -1,0 +1,12 @@
+// https://www.sqlbi.com/articles/debugging-dax-measures-in-power-bi/
+
+
+// 
+DEFINE 
+MEASURE Sales[Avg Transaction] =
+AVERAGEX (
+    Sales,
+    Sales[Order Quantity] * Sales[Unit Price]
+)
+EVALUATE
+{ [Avg Transaction] }
